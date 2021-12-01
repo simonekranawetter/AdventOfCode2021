@@ -17,3 +17,18 @@ for (int i = 1; i < inputInts.Length; i++)
     }
 }
 Console.WriteLine(part1);
+//Rinse repeat for part 2 
+int part2 = 0;
+
+for (int i = 0; i < inputInts.Length-3; i++)
+{
+    int sumOne = inputInts[i] + inputInts[i+1] + inputInts[i+2];
+    int sumTwo = inputInts[i+1] + inputInts[i+2] + inputInts[i+3];
+
+    if (sumTwo > sumOne)
+    {
+        part2++;
+    }
+}
+
+Console.WriteLine(part2);
