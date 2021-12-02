@@ -31,3 +31,35 @@ foreach (string line in input)
 }
 //Result for part 1
 Console.WriteLine(forward * depth);
+
+
+int forwardPart2 = 0;
+int depthPart2 = 0;
+int aim = 0;
+
+foreach (string line in input)
+{
+    string[] tokens = line.Split(' ');
+    string movement = tokens[0];
+    string numberString = tokens[1];
+
+    if (movement == "down")
+    {
+        aim += int.Parse(numberString);
+    }
+    else if (movement == "up")
+    {
+        aim -= int.Parse(numberString);
+    }
+    else if (movement == "forward")
+    {
+        forwardPart2 += int.Parse(numberString);
+        depthPart2 += (aim * int.Parse(numberString));
+    }
+    else
+    {
+        Console.WriteLine("yo, you messed up!");
+    }
+}
+//Result for part 2
+Console.WriteLine(forwardPart2 * depthPart2);
